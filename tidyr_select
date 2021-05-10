@@ -1,0 +1,18 @@
+#separate func
+library(dplyr)
+df<-data.frame(x=c('a:1','b:3'))
+df
+df%>% separate(x,c('key','value'),':')%>%str
+df
+data<-data.frame(x=rep(LETTERS[1:3],each=3),y =rep(paste0('factor',c(1,2,3)),3),num=1:9)
+head(data)              
+#gather()
+head(iris)
+x<-iris%>% group_by(Species) %>% slice(1)
+x
+iris %>% gather (key = 'flower_att', value ='measurements',-species)
+#unite()
+library(datasets)
+head(mtcars)
+merged<-  unite (mtcars,'vs_am',c('vs_am'))
+head(merged)
